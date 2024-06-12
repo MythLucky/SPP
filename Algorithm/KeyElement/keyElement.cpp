@@ -1,6 +1,5 @@
 #include<iostream>
 #include<cstdio>
-#pragma warning(disable:4996)
 using namespace std;
 int m,n,fin_price=0,anstop=0;
 int *conLength,*eleLength,*eleNum,*ans,*p;
@@ -28,11 +27,11 @@ void input()
 	fill_n(eleNum,m,0);//数组初始化
 	p=new int[n];
 	con = new int*[n]; //行指针
-    for(j=0;j<=n-1;j++)
-        *(con+j) = new int[m]; //列生成
+    for(j=0;j<=n-1;j++) 
+		*(con+j) = new int[m]; //列生成
 	ele = new int*[m]; //行指针
     for(j=0;j<=m-1;j++)
-        *(ele+j) = new int[n]; //列生成
+		*(ele+j) = new int[n]; //列生成
 
 	for(j=0;j<=n-1;j++)//错位存储，所有元素左移一位
 	{ //823 8904
@@ -112,6 +111,7 @@ bool spp_init()
 	if(!key_element()){
 		return false;
 	}
+	return true;
 }
 void release()
 {
